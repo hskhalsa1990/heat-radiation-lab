@@ -1,0 +1,12 @@
+material,emissivity_typical,temp_range_K,note
+Polished aluminium,0.05,300-500,approximate handbook value
+Oxidised steel,0.79,300-800,approximate handbook value
+Black paint,0.96,300-500,approximate handbook value
+Concrete,0.92,300-400,approximate handbook value
+Polished copper,0.03,300-500,approximate handbook value
+Brick,0.93,300-500,approximate handbook value
+Glass,0.90,300-500,approximate handbook value
+Human skin,0.98,300-320,approximate handbook value
+Water,0.96,273-373,approximate handbook value
+Asphalt,0.93,300-400,approximate handbook value
+Tungsten (filament),0.11-0.35,1000-3000,rises with temperature (see radiation_extra.py)

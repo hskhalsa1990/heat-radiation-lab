@@ -1,0 +1,12 @@
+language,status,n_evals,seconds,evals_per_s
+C,ok,1000000.0,0.003,344902037.0
+C++,ok,1000000.0,0.005,200230385.0
+Go,skipped (toolchain not installed),,,
+Rust,skipped (toolchain not installed),,,
+Java,skipped (toolchain not installed),,,
+JavaScript,ok,1000000.0,0.052,19346415.0
+TypeScript,ok,1000000.0,0.047,21275763.0
+R,skipped (toolchain not installed),,,
+Bash/awk,ok,100000.0,0.016,6145612.0
+Python (loop),ok,100000.0,0.021,4758107.0
+Python (numpy),ok,1000000.0,0.023,42851678.0

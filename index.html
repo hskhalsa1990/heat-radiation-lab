@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Heat Radiation Lab</title>
+<style>body{font-family:sans-serif;max-width:720px;margin:auto;padding:12px}input{width:90px}img{max-width:100%}</style></head><body>
+<h1>Heat Radiation Lab</h1>
+<p>Emissivity <input id="e" value="0.8" type="number" step="0.01"> T (K) <input id="t" value="800" type="number"> Surroundings (K) <input id="s" value="300" type="number"></p>
+<p><b id="out"></b></p><canvas id="c" width="680" height="300" style="border:1px solid #888;width:100%"></canvas>
+<h2>Figures</h2><img src="fig_3d_flux_surface.png"><img src="fig_planck_curves.png"><img src="fig_material_bar.png"><img src="fig_cv_thermal.png"><h2>Diagrams</h2><img src="diagram_architecture.png"><img src="diagram_3d_sphere.png"><img src="diagram_3d_cooling.png"><img src="diagram_em_spectrum.png"><img src="diagram_shield_network.png"><img src="diagram_view_factor.png"><img src="diagram_correlation.png"><img src="diagram_radar.png">
+<script>
+const S=5.670374419e-8,q=i=>document.getElementById(i);
+async function api(e,t,s){try{const r=await fetch(`/api/flux?e=${e}&T=${t}&Ts=${s}`);if(r.ok){const j=await r.json();return 'API: '+j.flux_Wm2.toFixed(1)+' W/m² · Wien peak '+j.wien_peak_nm.toFixed(0)+' nm'}}catch(x){}return ''}
+async function go(){const e=+q('e').value,t=+q('t').value,s=+q('s').value,f=e*S*(t**4-s**4);
+q('out').textContent='Net flux: '+f.toFixed(1)+' W/m²'; api(e,t,s).then(a=>{if(a)q('out').textContent+='  |  '+a});
+const c=q('c').getContext('2d');c.clearRect(0,0,680,300);c.beginPath();
+for(let T=300;T<=1500;T+=10){const y=e*S*(T**4-s**4),X=(T-300)/1200*680,Y=300-y/(e*S*1500**4)*290;T==300?c.moveTo(X,Y):c.lineTo(X,Y)}
+c.strokeStyle='#d33';c.lineWidth=2;c.stroke();}
+['e','t','s'].forEach(i=>q(i).oninput=go);go();
+</script></body></html>

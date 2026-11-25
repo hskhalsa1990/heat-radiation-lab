@@ -1,0 +1,11 @@
+material,n,emissivity,mean_flux,mean_power
+Concrete,31,0.92,37997.97,86299.08
+Water,19,0.95,33838.5,89298.54
+Human skin,37,0.97,33803.25,96629.65
+Glass,27,0.9,30108.86,74586.05
+Brick,32,0.93,28968.76,60653.68
+Asphalt,32,0.93,27578.72,38230.31
+Black paint,24,0.95,27004.6,63803.79
+Oxidised steel,35,0.79,25269.84,77327.08
+Polished aluminium,19,0.05,2938.34,7837.78
+Copper polished,38,0.03,910.58,2236.23
